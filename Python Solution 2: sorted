@@ -1,0 +1,7 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        myMap = defaultdict(list)
+        for word in strs:
+            sortedWord = ''.join(sorted(word))
+            myMap[sortedWord].append(word)
+        return list(myMap.values())
